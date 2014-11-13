@@ -8,11 +8,12 @@ namespace TourOfCSharp6
     {
         static void Main(string[] args)
         {
-            var webErrors = new Dictionary<int, string>();
-            webErrors.Add(404, "Page not Found");
-            webErrors[302] = "Page moved, but left a forwarding address.";
-            webErrors[500] = "The web server can't come out to play today.";
-
+            var webErrors = new Dictionary<int, string>
+            {
+                [404] = "Page not Found",
+                [302] = "Page moved, but left a forwarding address.",
+                [500] = "The web server can't come out to play today."
+            };
 
             //PartOne();
         }
