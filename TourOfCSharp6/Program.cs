@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Enumerable;
 
 namespace TourOfCSharp6
@@ -6,6 +7,17 @@ namespace TourOfCSharp6
     class Program
     {
         static void Main(string[] args)
+        {
+            var webErrors = new Dictionary<int, string>();
+            webErrors.Add(404, "Page not Found");
+            webErrors[302] = "Page moved, but left a forwarding address.";
+            webErrors[500] = "The web server can't come out to play today.";
+
+
+            //PartOne();
+        }
+
+        private static void PartOne()
         {
             var random = new System.Random();
             var range = Range(1, 100);
