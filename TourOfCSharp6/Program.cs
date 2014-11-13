@@ -10,6 +10,12 @@ namespace TourOfCSharp6
     {
         static void Main(string[] args)
         {
+            var random = new System.Random();
+            var sequence = from n in Enumerable.Range(0, 100)
+                           select new Point { X = random.NextDouble() * 1000, Y = random.NextDouble() * 1000 };
+
+            foreach (var item in sequence)
+                Console.WriteLine(item);
         }
     }
 }
