@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Enumerable;
 
 namespace TourOfCSharp6
@@ -6,6 +7,15 @@ namespace TourOfCSharp6
     class Program
     {
         static void Main(string[] args)
+        {
+            var vector = new Dictionary<string, Point>();
+            vector["start"] = new Point(0, 0);
+            vector["end"] = new Point(3, 4);
+
+            //PartOne();
+        }
+
+        private static void PartOne()
         {
             var random = new System.Random();
             var range = Range(1, 100);
