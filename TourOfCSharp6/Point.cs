@@ -15,7 +15,7 @@ namespace TourOfCSharp6
 
         public override string ToString()
         {
-            return string.Format("{{{0:F2}, {1:F2}}}, Distance = {2:F2}", X, Y, Distance);
+            return string.Format("\{X:F2}, \{Y:F2}, Distance = \{Distance:F2}");
         }
     }
 }
