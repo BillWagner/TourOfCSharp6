@@ -19,9 +19,7 @@ namespace TourOfCSharp6
             var vendor = new Company();
             var location = vendor?.ContactPerson?.HomeAddress?.LineOne;
             WriteLine(location);
-            var disposable = vendor as IDisposable;
-            if (disposable != null)
-                disposable.Dispose();
+            (vendor as IDisposable)?.Dispose();
 
             int failures = 0;
             for (int i = 0; i < 50; i++)
