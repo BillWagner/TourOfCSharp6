@@ -16,11 +16,17 @@ namespace TourOfCSharp6
                 [500] = "The web server can't come out to play today."
             };
 
+            int failures = 0;
             for (int i = 0; i < 100; i++)
             {
-                var points = SimulatedWebRequest();
-                foreach (var item in points)
-                    Console.WriteLine(item);
+                try {
+                    var points = SimulatedWebRequest();
+                    foreach (var item in points)
+                        Console.WriteLine(item);
+                } catch(TimeoutException e) if (failures++ < 10)
+                {
+                    WriteLine("Timeout error: trying again");
+                }
 
             }
 
