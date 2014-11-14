@@ -16,6 +16,20 @@ namespace TourOfCSharp6
                 [500] = "The web server can't come out to play today."
             };
 
+            var vendor = new Company();
+            var location = default(string);
+            if (vendor != null)
+            {
+                if (vendor.ContactPerson != null)
+                {
+                    if (vendor.ContactPerson.HomeAddress != null)
+                    {
+                        location = vendor.ContactPerson.HomeAddress.LineOne;
+                    }
+                }
+            }
+            WriteLine(location);
+
             int failures = 0;
             for (int i = 0; i < 50; i++)
             {
