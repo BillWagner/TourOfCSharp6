@@ -17,18 +17,11 @@ namespace TourOfCSharp6
             };
 
             var vendor = new Company();
-            var location = default(string);
-            if (vendor != null)
-            {
-                if (vendor.ContactPerson != null)
-                {
-                    if (vendor.ContactPerson.HomeAddress != null)
-                    {
-                        location = vendor.ContactPerson.HomeAddress.LineOne;
-                    }
-                }
-            }
+            var location = vendor?.ContactPerson?.HomeAddress?.LineOne;
             WriteLine(location);
+            var disposable = vendor as IDisposable;
+            if (disposable != null)
+                disposable.Dispose();
 
             int failures = 0;
             for (int i = 0; i < 50; i++)
