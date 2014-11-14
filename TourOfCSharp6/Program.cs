@@ -26,7 +26,8 @@ namespace TourOfCSharp6
                         Console.WriteLine(item);
                 }
                 catch (Exception e) if (logException(e)) { }
-                catch (TimeoutException e) if (failures++ < 10)
+                catch (TimeoutException e) if ((failures++ < 10) &&
+                (!System.Diagnostics.Debugger.IsAttached))
                 {
                     WriteLine("Timeout error: trying again");
                 }
