@@ -17,21 +17,30 @@ namespace TourOfCSharp6
             };
 
             int failures = 0;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
-                try {
+                try
+                {
                     var points = SimulatedWebRequest();
                     foreach (var item in points)
                         Console.WriteLine(item);
-                } catch(TimeoutException e) if (failures++ < 10)
+                }
+                catch (Exception e) if (logException(e)) { }
+                catch (TimeoutException e) if (failures++ < 10)
                 {
                     WriteLine("Timeout error: trying again");
                 }
-
             }
-
-
             //PartOne();
+        }
+
+        private static bool logException(Exception e)
+        {
+            var oldColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            WriteLine("Error: {0}", e);
+            Console.ForegroundColor = oldColor;
+            return false;
         }
 
         private static IEnumerable<Point> SimulatedWebRequest()
