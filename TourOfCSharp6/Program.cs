@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Console;
 using System.Collections.Generic;
 using System.Linq.Enumerable;
 
@@ -15,7 +16,32 @@ namespace TourOfCSharp6
                 [500] = "The web server can't come out to play today."
             };
 
+            for (int i = 0; i < 100; i++)
+            {
+                var points = SimulatedWebRequest();
+                foreach (var item in points)
+                    Console.WriteLine(item);
+
+            }
+
+
             //PartOne();
+        }
+
+        private static IEnumerable<Point> SimulatedWebRequest()
+        {
+            var random = new System.Random();
+            var delay = random.NextDouble() * 5000;
+
+            var range = Range(1, 100);
+            var sequence = from n in range
+                           select new Point(
+                               random.NextDouble() * 1000,
+                               random.NextDouble() * 1000
+                           );
+            if (delay > 3000)
+                throw new TimeoutException("This just failed");
+            return sequence;
         }
 
         private static void PartOne()
