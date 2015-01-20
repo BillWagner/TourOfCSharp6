@@ -1,4 +1,4 @@
-﻿using System.Math;
+﻿using static System.Math;
 
 namespace TourOfCSharp6
 {
