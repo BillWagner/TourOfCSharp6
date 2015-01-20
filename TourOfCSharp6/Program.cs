@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq.Enumerable;
+using static System.Linq.Enumerable;
 
 namespace TourOfCSharp6
 {
@@ -23,7 +23,6 @@ namespace TourOfCSharp6
                     Y = random.NextDouble() * 1000
                 });
 
-            // Should not compile, but does with VS2015 14.0.22310.1
             var sequence3 = Select(range, n => new Point
             {
                 X = random.NextDouble() * 1000,
