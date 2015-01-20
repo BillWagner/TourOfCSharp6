@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Console;
+using static System.Console;
 using System.Collections.Generic;
-using System.Linq.Enumerable;
+using static System.Linq.Enumerable;
 
 namespace TourOfCSharp6
 {
