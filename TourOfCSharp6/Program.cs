@@ -61,13 +61,6 @@ namespace TourOfCSharp6
                     random.NextDouble() * 1000
                 ));
 
-            // Should not compile, but does with VS2015 14.0.22310.1
-            var sequence3 = Select(range, n => new Point
-            (
-                random.NextDouble() * 1000,
-                random.NextDouble() * 1000
-            ));
-
             foreach (var item in sequence)
                 Console.WriteLine(item);
         }
