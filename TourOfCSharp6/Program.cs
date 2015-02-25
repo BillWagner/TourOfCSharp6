@@ -23,6 +23,8 @@ namespace TourOfCSharp6
                     Y = random.NextDouble() * 1000
                 });
 
+            // doesn't compile because static usings do 
+            // not import extension method definitions.
             var sequence3 = Select(range, n => new Point
             {
                 X = random.NextDouble() * 1000,
