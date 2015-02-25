@@ -25,8 +25,8 @@ namespace TourOfCSharp6
                     foreach (var item in points)
                         Console.WriteLine(item);
                 }
-                catch (Exception e) if (logException(e)) { }
-                catch (TimeoutException e) if (failures++ < 10)
+                catch (Exception e) when (logException(e)) { }
+                catch (TimeoutException e) when (failures++ < 10)
                 {
                     WriteLine("Timeout error: trying again");
                 }
