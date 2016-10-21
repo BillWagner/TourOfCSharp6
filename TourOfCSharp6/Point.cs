@@ -1,4 +1,4 @@
-﻿using System.Math;
+﻿using static System.Math;
 
 namespace TourOfCSharp6
 {
@@ -15,7 +15,7 @@ namespace TourOfCSharp6
 
         public override string ToString()
         {
-            return string.Format("\{X:F2}, \{Y:F2}, Distance = \{Distance:F2}");
+            return $"{{{X :F2}, {Y :F2} }}, Distance = {Distance :F2}";
         }
     }
 }
